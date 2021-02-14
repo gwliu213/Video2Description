@@ -1,4 +1,7 @@
-FROM python:2 as frontend
+FROM ubuntu:xenial as frontend
+RUN apt-get update
+RUN apt-get install -y build-essential python2.7 python-pip
+
 RUN pip install enum34 flask waitress
 
 RUN useradd -m -s /bin/bash si
